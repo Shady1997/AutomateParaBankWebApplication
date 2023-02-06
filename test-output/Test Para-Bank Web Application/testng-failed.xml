@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Test Para-Bank Web Application]" parallel="tests">
+  <listeners>
+    <listener class-name="reports.MyListener"/>
+  </listeners>
+  <test thread-count="1" name="Para Bank Login(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="test_cases.TC01_CheckRegistration">
+        <methods>
+          <include name="registerNewAccount"/>
+          <include name="prepareClassProperties"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- test_cases.TC01_CheckRegistration -->
+    </classes>
+  </test> <!-- Para Bank Login(failed) -->
+</suite> <!-- Failed suite [Test Para-Bank Web Application] -->

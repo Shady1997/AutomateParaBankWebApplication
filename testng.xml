@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
+<!-- to run test sequentially change thread count from 2 to 1 and enable
+	firefox -->
+<suite name="Test Para-Bank Web Application" parallel="tests"
+       thread-count="1">
+  <listeners>
+    <listener class-name="reports.MyListener" />
+  </listeners>
+  <test name="Para Bank Login">
+    <parameter name="browser" value="Chrome" />
     <classes>
-      <class name="main.Start"/>
+      <class name="test_cases.TC01_CheckRegistration">
+      </class>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+  <!--<test name="TestFirefox"> <parameter name="browser" value="Firefox"
+      /> <classes> <class name="main.Start" /> </classes> </test> -->
+</suite>
